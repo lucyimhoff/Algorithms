@@ -12,11 +12,19 @@ public class Algorithms {
         int twoDigits = twoDigits();
         int aboveFiveHundred = aboveFiveHundred();
         int greatest = greatest();
+        int least = least();
+        int sum = sum();
+        double average = average();
+        int mode = mode();
         System.out.println("odds: " + odds);
         System.out.println("evens: " + evens);
         System.out.println("two digits: " + twoDigits);
         System.out.println("above five hundred: " + aboveFiveHundred);
         System.out.println("greatest number: " + greatest);
+        System.out.println("least number: " + least);
+        System.out.println("sum:  " + sum);
+        System.out.println("average: " + average);
+        System.out.println("mode: " + mode);
         s.close();
     }
 
@@ -72,6 +80,65 @@ public class Algorithms {
             
         }
         return greatest;
+    }
+
+    public static int least() throws FileNotFoundException{
+        s = new Scanner(f);
+        int least = s.nextInt();
+        while (s.hasNext()) {
+            int current = s.nextInt();
+            if(current < least)
+            least = current;
+            
+            
+        }
+        return least;
+    }
+
+    public static int sum() throws FileNotFoundException{
+        s = new Scanner(f);
+        int sum = 0;
+        while (s.hasNext()) {
+            int current = s.nextInt();
+            sum = sum + current;
+            
+            
+        }
+        return sum;
+    }
+
+    public static double average() throws FileNotFoundException{
+        s = new Scanner(f);
+        double average = 0;
+        double sum = 0;
+        int lineCount = 0;
+        while (s.hasNext()) {
+            double current = s.nextInt();
+            sum = sum + current;
+            lineCount++;
+
+            
+            
+            
+        }
+        average = sum/lineCount;
+        return average;
+    }
+
+    
+    public static int mode() throws FileNotFoundException{
+        s = new Scanner(f);
+        int mode = 0;
+        int[] nums;
+        while (s.hasNext()) {
+
+            
+
+            
+            
+            
+        }
+        return mode;
     }
 
 }
