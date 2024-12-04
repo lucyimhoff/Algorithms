@@ -74,7 +74,7 @@ public class Algorithms {
         int greatest = s.nextInt();
         while (s.hasNext()) {
             int current = s.nextInt();
-            if(current > greatest)
+            if (current > greatest)
             greatest = current;
             
             
@@ -87,7 +87,7 @@ public class Algorithms {
         int least = s.nextInt();
         while (s.hasNext()) {
             int current = s.nextInt();
-            if(current < least)
+            if (current < least)
             least = current;
             
             
@@ -129,13 +129,23 @@ public class Algorithms {
     public static int mode() throws FileNotFoundException{
         s = new Scanner(f);
         int mode = 0;
-        int[] nums;
+        int temp = 0;
+        int list[] = new int[1000];
         while (s.hasNext()) {
+            if(s.hasNextInt()){
+                int current = s.nextInt();
+                list[current]++;
+                
+            }
+            else{s.next();}
+            
+            for(int i = 0; i < 1000; i++){
+                if(list[i] > temp){
+                    temp = list[i];
+                    mode = i;
+                }
 
-            
-
-            
-            
+            }
             
         }
         return mode;
