@@ -26,9 +26,9 @@ public class Algorithms {
         System.out.println("average: " + average);
         System.out.println("mode: " + mode);
         int secondmode = secondmode();
-        if(secondmode > 0){
+        //if(secondmode > 0){
             System.out.println("second mode: " + secondmode);
-        }
+       // }
         s.close();
     }
 
@@ -180,12 +180,9 @@ public class Algorithms {
             
             }
             int modetemp = list[mode];
-            for(int i = 0; i < 1000; i++){
+            for(int i = 0; i < 1000 && i != mode; i++){
                 if(list[i] == modetemp){
                     mode2 = i;
-                }
-                else{
-                    mode2 = 0;
                 }
 
 
