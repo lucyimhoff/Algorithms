@@ -25,6 +25,10 @@ public class Algorithms {
         System.out.println("sum:  " + sum);
         System.out.println("average: " + average);
         System.out.println("mode: " + mode);
+        int secondmode = secondmode();
+        if(secondmode > 0){
+            System.out.println("second mode: " + secondmode);
+        }
         s.close();
     }
 
@@ -129,7 +133,8 @@ public class Algorithms {
     public static int mode() throws FileNotFoundException{
         s = new Scanner(f);
         int mode = 0;
-        int temp = 0;
+        int mode2 = 0;
+        int highest = 0;
         int list[] = new int[1000];
         while (s.hasNext()) {
             if(s.hasNextInt()){
@@ -140,15 +145,56 @@ public class Algorithms {
             else{s.next();}
             
             for(int i = 0; i < 1000; i++){
-                if(list[i] > temp){
-                    temp = list[i];
+                if(list[i] > highest){
+                    highest = list[i];
                     mode = i;
                 }
-
+            
             }
+
+
             
         }
         return mode;
     }
+
+    public static int secondmode() throws FileNotFoundException{
+        s = new Scanner(f);
+        int mode = 0;
+        int mode2 = 0;
+        int highest = 0;
+        int list[] = new int[1000];
+        while (s.hasNext()) {
+            if(s.hasNextInt()){
+                int current = s.nextInt();
+                list[current]++;
+                
+            }
+            else{s.next();}
+            
+            for(int i = 0; i < 1000; i++){
+                if(list[i] > highest){
+                    highest = list[i];
+                    mode = i;
+                }
+            
+            }
+            int modetemp = list[mode];
+            for(int i = 0; i < 1000; i++){
+                if(list[i] == modetemp){
+                    mode2 = i;
+                }
+                else{
+                    mode2 = 0;
+                }
+
+
+            
+        }
+        }
+        if(mode2 > 0) return mode2;
+        else return 0;
+    }
+    
 
 }
